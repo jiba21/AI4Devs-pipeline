@@ -16,4 +16,4 @@ on:
 
 jobs:
   backend:
-    uses: ./.github/workflows/backend-tests-build.yml
+    uses: ./.github/workflows/backend.yml
