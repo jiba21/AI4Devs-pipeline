@@ -1,11 +1,6 @@
 # This is a pipeline for the AI4Devs project
 name: AI4Devs Pipeline
-
-on:
-  push:
-    branches:
-      - 'jiba21:JIBA-Pipeline'
-      
+on:   
   pull_request:
     branches: 
       - 'main'
@@ -17,3 +12,8 @@ on:
 jobs:
   backend:
     uses: ./.github/workflows/backend.yml
+
+
+      # push:
+  #   branches:
+  #     - 'jiba21:JIBA-Pipeline'
