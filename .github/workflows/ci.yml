@@ -10,10 +10,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  backend:
-    uses: ./.github/workflows/backend.yml
+  test-backend:
+    name: 🧪 Tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: 😼 Checkout
+      uses: actions/checkout@v3
 
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
 
-      # push:
-  #   branches:
-  #     - 'jiba21:JIBA-Pipeline'
+    - name: 🔧 Install dependencies
+      run: |
+        cd backend
+        npm ci
+
+    - name: ⛑️ Run backend tests
+      run: |
+        cd backend
+        npm test
